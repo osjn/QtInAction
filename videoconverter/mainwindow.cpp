@@ -3,12 +3,15 @@
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QLabel>
+#include <QScrollBar>
+#include <QFileDialog>
 #include <QFileInfo>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
     initWindow();
+    createProcess();
 }
 
 MainWindow::~MainWindow()
@@ -45,12 +48,6 @@ void MainWindow::initWindow()
 
     connect(browserButton, SIGNAL(clicked()), this, SLOT(openFile()));
     connect(convertButton, SIGNAL(clicked()), this, SLOT(convertVideo()));
-
-    process = new QProcess(this);
-    connect(process, SIGNAL(started()), this, SLOT(processStarted()));
-    connect(process, SIGNAL(readyReadStandardOutput()),
-            this, SLOT(readyReadStandardOutput()));
-    connect(process, SIGNAL(finished(int)), this, SLOT(processFinished()));
 }
 
 void MainWindow::createFilterList()
@@ -60,6 +57,15 @@ void MainWindow::createFilterList()
     filterList->addItem("mp4");
     filterList->addItem("mov");
     filterList->addItem("mkv");
+}
+
+void MainWindow::createProcess()
+{
+    process = new QProcess(this);
+    connect(process, SIGNAL(started()), this, SLOT(processStarted()));
+    connect(process, SIGNAL(readyReadStandardOutput()),
+            this, SLOT(readyReadStandardOutput()));
+    connect(process, SIGNAL(finished(int)), this, SLOT(processFinished()));
 }
 
 void MainWindow::processStarted()
@@ -140,6 +146,3 @@ void MainWindow::convertVideo()
         QMessageBox::warning(this, tr("提示信息"), tr("未选择任何文件"));
     }
 }
-
-
-

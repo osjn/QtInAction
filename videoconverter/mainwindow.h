@@ -2,11 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QFileDialog>
 #include <QProcess>
 #include <QMessageBox>
-#include <QScrollBar>
-#include <QDebug>
 #include <QLineEdit>
 #include <QPushButton>
 #include <QComboBox>
@@ -38,5 +35,6 @@ private:
 
     void initWindow();
     void createFilterList();
+    void createProcess();
 };
 #endif // MAINWINDOW_H
