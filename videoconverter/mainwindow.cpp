@@ -48,7 +48,8 @@ void MainWindow::initWindow()
 
     process = new QProcess(this);
     connect(process, SIGNAL(started()), this, SLOT(processStarted()));
-    connect(process, SIGNAL(readyReadStandardOutput()), this, SLOT(readyReadStandardOutput()));
+    connect(process, SIGNAL(readyReadStandardOutput()),
+            this, SLOT(readyReadStandardOutput()));
     connect(process, SIGNAL(finished(int)), this, SLOT(processFinished()));
 }
 
