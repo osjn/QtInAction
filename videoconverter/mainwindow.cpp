@@ -112,7 +112,8 @@ void MainWindow::convertVideo()
                 outputDisplay->setText("");
 
             QFileInfo fileInfo(fileName);
-            QString outputFileName = fileInfo.path() + "/" + fileInfo.completeBaseName();
+            QString outputFileName = fileInfo.path() + "/"
+                                     + fileInfo.completeBaseName();
             int format = filterList->currentIndex();
             switch (format) {
             case 0:
