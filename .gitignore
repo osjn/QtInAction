@@ -53,6 +53,6 @@ compile_commands.json
 
 *_qmlcache.qrc
 
-# build directories
+# directories
 *build*
-*ffmpeg*
+ffmpeg
