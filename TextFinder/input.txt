@@ -1,0 +1,5 @@
+To call a find function when users select the Find button, you use the Qt signals and slots mechanism.
+A signal is emitted when a particular event occurs and a slot is a function that is called in response to a particular signal. 
+Qt widgets have predefined signals and slots that you can use directly from Qt Designer. 
+基于ArkTS的声明式开发范式的方舟开发框架是一套开发极简、高性能、跨设备应用的UI开发框架，支持开发者高效的构建跨设备应用UI界面。
+使用基于ArkTS的声明式开发范式的方舟开发框架，采用更接近自然语义的编程方式，让开发者可以直观地描述UI界面，不必关心框架如何实现UI绘制和渲染，实现极简高效开发。开发框架不仅从组件、动效和状态管理三个维度来提供UI能力，还提供了系统能力接口，实现系统能力的极简调用。
